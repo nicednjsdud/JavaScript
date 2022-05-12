@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>객체 리터럴</title>
+</head>
+<body>
+  <script>
+    // 객채 리터럴
+    let p1 = {x : 300, y : 200}     // (x,y)좌표가 (300,200)인 객체 생성
+    let p2 = {x : 350, y : 280}     // (x,y)좌표가 (350,280)인 객체 생성
+    let rect = {
+        topLeft : p1,
+        bottomRight : p2,
+        size : function (){
+            return (this.bottomRight.x - this.topLeft.x) * (this.bottomRight.y - this.topLeft.y)
+        }
+    }
+    document.writeln('사각형의 넓이: '+rect.size()+'<br/>')
+    document.writeln('<br/>')
+
+    p1 = { x: 200, y : 300}
+    p2 = { x: 300, y : 400}
+    rect .topLeft=p1;
+    rect.bottomRight=p2;
+    document.writeln('위치 변경 후 사각형의 넓이: '+rect.size()+'<br/>')
+    document.writeln('<br/>')
+
+
+  </script>
+</body>
+</html>

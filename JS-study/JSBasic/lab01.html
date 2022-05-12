@@ -6,8 +6,14 @@
 </head>
 <body>
     <script>
-        document.writeln('Hello, JavaScript!!')
-        document.writeln()
+        document.writeln('Hello, JavaScript!!<br/>')
+        document.writeln('&lt;script&gt; 태그 아래 자바스크립트 코드 직접 작성 '
+                                +'-- 인라인 스크립트 방식.<br/>')
+    </script>
+
+    <!-- 외부스크립트와 인라인 스크립트는 동시에 작성 불가 (인라인 스크립트 내용 무시됨) -->
+    <script src="lab01.js">
+        document.writeln('외부 스크립트를 사용할 때는 &lt;script&gt; 태그 아래 내용은 무시됨')
     </script>
 </body>
 </html>
