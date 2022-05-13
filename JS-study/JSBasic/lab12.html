@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>논리연산자</title>
+</head>
+<body>
+<script>
+    let calculator
+
+    // && 좌측 표현식의 평가가 false일 경우 우측 표현식은 실행되지 않는다.
+    calculator && document.writeln('calculator.add(2,3) : ' + calculator.add(2, 3) + '<br/>')
+
+    calculator = {
+        add: function (op1, op2) {
+            return op1 + op2
+        }
+    }
+
+    calculator && document.writeln('true로 평가된 calculator.add(2,3) : ' + calculator.add(2, 3) + '<br/>')
+    document.writeln('<br/>')
+
+    // || 좌측 표현식이 undefined값을 가지면 false로 평가되어 우측 평가식을 실행함.
+    calculator.subtract || (calculator.subtract = function (op1, op2) {
+        return op1 - op2
+    })
+    calculator.subtract && document.writeln('프로퍼티가 추가된 calculator.subtract(2,3) : ' + calculator.subtract(2, 3) + '<br/>')
+</script>
+</body>
+</html>

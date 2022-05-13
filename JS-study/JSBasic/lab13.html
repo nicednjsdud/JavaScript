@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+        기타연산자
+            instanceof : 피연산자의 객체 타입 조사
+
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>기타 연산자</title>
+</head>
+<body>
+    <script>
+        let arr = [1,'이순신','010-2344-0323',true,new Date(),[10,20,30]]
+
+        document.writeln('typeof arr[0] : '+typeof arr[0]+'<br/>')
+        document.writeln('typeof arr[1] : '+typeof arr[1]+'<br/>')
+        document.writeln('typeof arr[2] : '+typeof arr[2]+'<br/>')
+        document.writeln('typeof arr[3] : '+typeof arr[3]+'<br/>')
+        document.writeln('typeof arr[4] : '+typeof arr[4]+'<br/>')
+        document.writeln('typeof arr[5] : '+typeof arr[5]+'<br/>')
+        document.writeln('<br/>')
+
+        document.writeln('arr[4] instanceof Date : ' +(arr[4] instanceof Date)+'<br/>')
+        document.writeln('arr[5] instanceof Array : '+(arr[5] instanceof Array)+'<br/>')
+        document.writeln('<br/>')
+
+        document.writeln('arr : '+arr+'<br/>')
+        document.writeln('<br/>')
+
+        document.writeln('delete arr[2] :'+delete arr[2]+'<br/>')
+        document.writeln('arr[2] :'+arr[2]+'<br/>')
+        document.writeln('<br/>')
+
+        let point = {
+            x : 20,
+            y : 30,
+            toString : function () {
+                return '{ x : '+this.x+' y : '+this.y+' }'
+            }
+        }
+
+        document.writeln('point : '+point+'<br/>')
+        document.writeln('delete point.y : '+delete point.y+'<br/>')
+        document.writeln('point : '+point+'<br/>')
+
+        document.writeln('delete point.tostring : '+delete point.toString+'<br/>')
+        document.writeln('point : '+point+'<br/>')
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

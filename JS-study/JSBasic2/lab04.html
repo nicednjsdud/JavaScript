@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+    Short Circuit Logical Operator (짧은 논리 회로 연산자)
+    - && 연산자
+        - 좌측 피연산자의 평가 값은 true로 변환할수 있으면 우측 피 연산자의 표현식을 평가할 수 있음
+        - if 문과 같은 기능을 수행
+    - || 연산자
+        - 좌측 피연산자의 평가 값이 false로 변환할수 있는경우 우측 피 연산자의 표현식을 평가할 수 있음
+        - if 문과 같은 기능을 수행
+
+ -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$$와 ||을 이용한 조건문</title>
+</head>
+<body>
+<script>
+    let arr
+
+    // arr의 undefined일 경우 비어잇는 배열 객체를 대입함.
+    arr = arr || []
+
+    arr[0] = '홍길동'
+    arr[1] = '이순신'
+    arr[2] = '신사임당'
+
+    arr && document.writeln(`arr.length : ${arr.length}`)
+
+
+</script>
+</body>
+</html>

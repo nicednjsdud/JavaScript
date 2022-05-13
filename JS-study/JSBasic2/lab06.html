@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+    for(초기식;조건식;증감식0){ 문장들 }
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For문</title>
+</head>
+<body>
+<script>
+    let arr2d = [
+        ['을지문덕', '연개소문'],
+        ['광개토대왕', '세종대왕'],
+        ['김유신', '계백']
+    ]
+
+    for (let i = 0; i < arr2d.length; i++) {
+        for (let j = 0; j < arr2d[i].length; j++) {
+            document.writeln(arr2d[i][j] + '<br/>')
+        }
+    }
+    document.writeln('<br/>')
+
+    let a = [2, 3, 5, 7, 11, 13]
+    for (let i = a.length - 1; i >= 0; i--)
+        document.writeln(a[i] + '<br/>')
+    document.writeln('<br/>')
+    /*
+        for of 루프
+            - 배열이나 문자열에 사용함.
+     */
+    let arr = [, 2, , 4]
+    arr[9] = 100
+    for (const element of arr)
+        document.writeln(element + '<br/>')
+
+    document.writeln('<br/>')
+
+    /*
+     자바스크립트 for of 루프는 일반화된 for 루프와 같다.
+     임의의 객체의 프로퍼티 값을 반복할때는 for of 루프를 사용할 수 없다.
+
+     for in 루프
+         -d 주어진 객체의 키를 방문함
+         - 열거할 수 없는 프로퍼티는 생략함
+    */
+    // for in
+    let greeting = 'Hello BoB'
+    for (const c of greeting)
+        document.writeln(c)
+    document.writeln('<br/>')
+
+    // for of
+    let obj = {name: 'WonYoung', age: 26,}
+    for (const key in obj)
+        document.writeln(`${key}: ${obj[key]}`)
+    document.writeln('<br/>')
+
+    let numbers = [1, 2, , 4]
+    numbers[99] = 100
+    for (const i in numbers)
+        document.writeln(`${i} : ${numbers[i]}`)
+
+</script>
+</body>
+</html>
