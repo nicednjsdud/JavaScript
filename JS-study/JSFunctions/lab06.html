@@ -3,20 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <title>이벤트 핸들러 등록과 이벤트 처리</title>
+    <script>
+
+        // 버튼 btnAdd를 클릭하면 이 함수를 호출함.
+        function add() {
+            // id 속성값이 siteName, siteURL, result인 엘리먼트를 찾아 강조함
+            let siteNameElement =document.getElementById('siteName')
+            let urlElement = document.getElementById('siteURL') 
+            let resultElement = document.getElementById('result')
+
+            // <a> </a> 엘리먼트 생성
+            let anchorElement = document.createElement('a')
+
+            // <a href="???"></a> a 엘리먼트의 href 속성값을 urlElement에 저장된 값으로 대입
+            anchorElement.href = urlElement.value
+
+            // siteNameElement에 저장된 값으로 텍스트 노드를 생성
+            let newTextNode = document.createTextNode(siteNameElement.value)
+
+            // <a></a> 엘리먼트의 자식노드로 방금전 만든 텍스트 노드를 추가함.
+            anchorElement.appendChild(newTextNode)
+
+            //<br/> 엘리먼트 생성
+            let brElement = document.createElement('br')
+
+            // result 엘리먼트의 자식노드로 anchorElement와 brElement를 추가함
+            resultElement.append(anchorElement)
+            resultElement.append(brElement)
+
+            // 입력필드 초기화
+            siteNameElement.value=''
+            urlElement.value=''
+
+        }
+
+        function cancel() {
+            // id 속성 값이 siteName,siteURL인 엘리먼트를 찾아 참조
+            let siteNameElement =document.getElementById('siteName')
+            let urlElement = document.getElementById('siteURL')
+
+            // 입력필드 초기화
+            siteNameElement.value=''
+            urlElement.value=''
+        }
+
+        /* HTML 문서가 파싱되고 외부 컨텐츠 로딩이 완료되면
+           웹 브라우저에서는 load 이벤트 발생 */
+
+        /* 이벤트 핸들러로 등록된 함수가 실행됨. */
+
+        /* htmlElement.이벤트 핸들러 프로퍼티명 = function() {  }
+           htmlElement.이벤트 핸들러 프로퍼티명 = 함수명*/
+        window.onload = function () {
+            let btnAddElement = document.getElementById('btnAdd')
+            let btnCancel = document.getElementById('btnCancel')
+            btnAddElement.onclick = add
+            btnCancel.onclick = cancel
+
+        }
+
+    </script>
 </head>
 <body>
-  <form>
+<form>
     <label>
         웹사이트 : <br/>
-        <input type="text" id="siteName" size="50" /><br/>
+        <input type="text" id="siteName" size="50"/><br/>
     </label>
-      ㅛ<label>
-          URL : <br/>
-          <input type="text" id="siteURL" size="50" /><br/>
-      </label>
-      <br/>
-      <input type="button" id="btnAdd" value="추가" />
-      <input type="button" id="btnCancel" value="취소"/>
-  </form>
+    <label>
+        URL : <br/>
+        <input type="text" id="siteURL" size="50"/><br/>
+    </label>
+    <br/>
+    <input type="button" id="btnAdd" value="추가"/>
+    <input type="button" id="btnCancel" value="취소"/>
+</form>
+  
+<div id="result">
+    
+</div>
 </body>
 </html>

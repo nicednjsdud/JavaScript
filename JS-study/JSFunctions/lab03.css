@@ -12,8 +12,7 @@
     height: 100%;
     object-fit: contain;
 }
-
-#top input {
+#top input[type="search"] {
     height: 60%;
     width: 95%;
     margin: auto;
@@ -24,6 +23,17 @@
     font-size: 10px;
     font-weight: 100;
 }
+#event10 input [type="button"] {
+    height : 80%;
+    width : 95%;
+
+    font-size : 10px;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 3px;
+
+}
+
 i {
     font-size: 14px;
     /*color: purple;*/
@@ -32,5 +42,11 @@ i {
 #top div {
     text-align: center;
     padding-top: 6px;
+}
+
+#event_test {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    height: 50px;
 }
 

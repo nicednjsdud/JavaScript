@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+    DOM 이벤트 핸들링 -- 이벤트 리스너 (event listener)
+        - 한개의 HTML 요소에서 복수의 이벤트와 연관을 맺을 수 있음
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM 이벤트 핸들링</title>
+    <script>
+        // click 이벤트 발생 시 수행 할 이벤트 핸들러 함수
+        function addText() {
+            let resultElement = document.getElementById('result')
+            resultElement.innerHTML = '이벤트 리스너 구현'
+        }
+
+        // click 이벤트 발생 시 수행 할 이벤트 핸들러 함수
+        function clearText() {
+            let resultElement = document.getElementById('result')
+            resultElement.innerHTML = ''
+        }
+        // load 이벤트 발생 시 수행할 이벤트 핸들러 함수
+        function init(){
+            /* id 속성 값 btnClick, btnCancel 인 버튼을 찾아
+                이벤트 리스너 등록 함수를 사용해 click 이벤트
+               핸들러 함수를 등록*/
+            let btnClickElement = document.getElementById('btnClick')
+            let btnCancelElement = document.getElementById('btnCancel')
+
+            addListener(btnClickElement,'click', addText)
+            addListener(btnCancelElement,'click', clearText)
+        }
+        /* 크로스 브라우징 고려한 이벤트 리스너 등록 함수
+            el : 이벤트가 발생한 HTML 요소
+            ev : 이벤트
+            handler : 이벤트 핸들러 함수
+         */
+        function addListener(el, ev, handler){
+            el.addEventListener(ev,handler,false)
+
+
+        }
+
+        addListener(window, 'load', init)
+    </script>
+</head>
+<body>
+<form>
+    <input type="button" id="btnClick" value="눌러주세요"/>
+    <input type="button" id="btnCancel" value="취소"/>
+</form>
+<div>
+    <div id="result">
+
+    </div>
+</div>
+</body>
+</html>

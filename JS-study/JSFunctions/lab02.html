@@ -7,23 +7,64 @@
     <linK href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet"/>
 </head>
 <body>
-    <script>
-        console.log("test")
-        alert("오늘은 월요일이네요. 기분이 좋으시죠?")
-    </script>
-    <div id="top">
-        <img src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png">
-        <input type="search" value="검색">
-        <div>
-            <i class="fab fa-android"></i>
-            <i class="far fa-home"></i>
-            <i class="far fa-paper-plane"></i>
-            <i class="far fa-compass"></i>
-            <i class="far fa-heart"></i>
-          <!--  <i class="far fa-fan"></i>
-            <i class="far fa-border-all"></i>
-            <i class="fas fa-film"></i>-->
-        </div>
+<script>
+    console.log("test")
+    // alert("오늘은 월요일이네요. 기분이 좋으시죠?")
+    function numbering(number) {
+        for(let i=0;i<number;i++){
+            console.log(i)
+        }
+    }
+    function red() {
+        // HTML 요소(Element) 1개 검색/ 찾기
+         let button = document.querySelector("#red")
+         button.style.backgroundColor ="red"
+    }
+    // 요소.addEventListener
+    function event1() {
+        let btn = document.querySelector("#event1")
+        btn.addEventListener("click", function (ev) {
+            alert("clicked")
+        })
+    }
+</script>
+<div id="top">
+    <img src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png">
+    <input type="search" value="검색">
+    <div>
+        <i class="fab fa-android"></i>
+        <i class="far fa-home"></i>
+        <i class="far fa-paper-plane"></i>
+        <i class="far fa-compass"></i>
+        <i class="far fa-heart"></i>
+        <!--  <i class="far fa-fan"></i>
+          <i class="far fa-border-all"></i>
+          <i class="fas fa-film"></i>-->
     </div>
+    <div id="event10">
+        <div id="event_test">
+            <input type="button" value="click" onclick="alert('안녕하세요.')"/>
+        </div>
+        <p onclick="alert('좋은 화요일입니다!')">
+            눌러봐요!
+        </p>
+
+        <input type="button" value="버튼"
+               onclick="
+                    for(let i=1;i<=5;i++){
+                        console.log(i)
+                    }
+                "/>
+        <br><br>
+        <input type="button" value="버튼" onclick="for (let i=0; i<5 ;i++){console.log(i)}" />
+        <br><br>
+        <input type="button" value="버튼" onclick="numbering(15)" />
+        <br><br>
+        <input id="red" type="button" value="버튼" onclick="red()" />
+        <br><br>
+        <input id="event1" type="button" value="버튼" onclick="event1()" />
+    </div>
+
+</div>
 </body>
 </html>

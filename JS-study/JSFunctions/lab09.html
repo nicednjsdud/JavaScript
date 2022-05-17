@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery 셀렉터</title>
+    <style>
+        div {
+            font-size: 12px;
+            line-height: 14px;
+        }
+        .header {
+            color: blueviolet;
+            font-size: 24px;
+        }
+        .content {
+            color: blue;
+        }
+        .footer {
+            color:blueviolet;
+            font-size: 14px;
+        }
+        .evenitem {
+            background-color: chartreuse;
+            color:chocolate;
+        }
+        .odditem {
+            background-color: yellow;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#header').addClass('header')
+            $('#content').addClass('content')
+            $('#footer').addClass('footer')
+
+            // parent > child (parent 요소의 자식요소를 선택)
+            $('#list > div:nth-child(2n)').addClass('evenitem')
+            $('#list > div:nth-child(2n+1)').addClass('odditem')
+
+            let $element =$('#list > div')
+
+            $('#message').text('앞으로 강좌' + $element.length+'강')
+
+            let resultStr =''
+
+            $('<h4>강좌</h4>').appendTo('#result')
+            $element.each(function (index,element){
+                resultStr = (index+1) +'.'+$(element).text()
+                $('#result').append(resultStr)
+                $('#result').append('<br/>')
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id = "header">
+        <p>jQuery Selector</p>
+    </div>
+    <div id="content">
+        <div>
+            <p id="message"></p>
+        </div>
+        <div id="list">
+            <div>JSP</div>
+            <div>Spring</div>
+            <div>SpringBoot</div>
+            <div>Kotlin</div>
+            <div>AWS</div>
+        </div>
+        <div>
+            <p id="result"></p>
+        </div>
+    </div>
+    <div id="footer">
+        <p>Copyright by BOB. All rights reserved</p>
+    </div>
+</body>
+</html>
