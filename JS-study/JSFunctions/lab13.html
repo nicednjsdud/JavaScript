@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+    * 페이딩 : HTML 요소의 불투명도(opacity)를 조정하는 기능
+        - fadeIn()
+            - opacity를 0에서 1로 변경하여 서서히 나타나는 애니메이션 효과를 주기 위해 사용
+        - fadeOut()
+            - opacity를 1에서 0으로 변경하여 서서히 사라지는 애니메이션 효과를 주기 위해 사용
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>페이딩</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <style>
+        .picframe {
+            color : #aaaaaa;
+            border : 1px solid #444444;
+            width: 302px;
+            height: 400px;
+        }
+        #image {
+            position : relative;
+            width : 302px;
+            height: 400px;
+            display: none;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#fadein").click(function () {
+                $("#image").fadeIn(3000)
+            })
+            $("#fadeout").click(function () {
+                $("#image").fadeOut(3000)
+            })
+        })
+
+    </script>
+</head>
+<body>
+    <div class="picframe">
+        <img src="alaskan_malamute.jpg" id="image">
+    </div>
+    <div>
+        <button id="fadein">페이드인</button>
+        <button id="fadeout">페이드아웃</button>
+    </div>
+</body>
+</html>

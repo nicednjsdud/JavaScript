@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--
+    * 슬라이딩
+        * HTML 요소의 높이를 조절하여 접었다 폈다 할 수 잇는 기능
+        * slideUp()
+        * slideDown()
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>슬라이딩</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <style>
+        body { width: 360px;}
+        .header { color: #000080; font-size: 24pt;}
+        .content { color: #008000; }
+        .footer { color: #800080;}
+        ul #menubar,ul #menubar, ul {
+            text-indent: 10px;
+            list-style: none;
+            padding:0;
+        }
+        li.menu{
+            margin-bottom: 2px;
+        }
+        div.menuitem{
+            height: 32px;
+            line-height: 2;
+            background: #6b8e23;
+            color: #ffffff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        ul.submenuitem li{
+            height: 32px;
+            line-height: 2;
+            background-color: #f5f5dc ;
+            cursor: pointer;
+        }
+        ul.submenuitem li a{
+            color: #000000;
+            text-decoration: none;
+            overflow: hidden;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        ul.submenuitem li:hover {
+            background: #f0a68c;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('#header').addClass('header')
+            $('#content').addClass('content')
+            $('#footer').addClass('footer')
+
+            $('.submenuitem').hide()
+            $('div .menuitem').bind('click',function () {
+                if($(this).next().css('display')==='none'){
+                    $('.submenuitem').slideUp()
+                }
+                $(this).next().slideDown()
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="header">
+    <p>jQuery Effect</p>
+</div>
+<div id="content">
+    <ul id="menubar">
+        <li class="menu">
+            <div class="menuitem">분석</div>
+            <ul class="submenuitem">
+                <li><a href="#">AS-IS</a></li>
+                <li><a href="#">TO-BE</a></li>
+                <li><a href="#">bench-marking</a></li>
+            </ul>
+        </li>
+        <li clas="menu">
+            <div class="menuitem">설계</div>
+            <ul class="submenuitem">
+                <li><a href="#">화면설계서(SB)</a></li>
+                <li><a href="#">DB table</a></li>
+            </ul>
+        </li>
+        <li class="menu">
+            <div class="menuitem">개발</div>
+            <ul class="submenuitem">
+                <li><a href="#">front</a></li>
+                <li><a href="#">back</a></li>
+                <li><a href="#">application</a></li>
+            </ul>
+        </li>
+        <li class="menu">
+            <div class="menuitem">화면설계서</div>
+            <ul class="submenuitem">
+                <li><a href="#">프로세스 플로우차트</a></li>
+                <li><a href="#">개발 범위 화면 목록</a></li>
+                <li><a href="#">와이어 프레임</a></li>
+            </ul>
+        </li>
+        <li class="menu">
+            <div class="menuitem">Story Board</div>
+            <ul class="submenuitem">
+                <li><a href="#">주요서비스 플로우차트</a></li>
+                <li><a href="#">사용자의 흐름을 설계</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div id="footer">
+    <p>Copyright by BOB. All rights reserved</p>
+</div>
+</body>
+</html>
